@@ -1,27 +1,27 @@
 'use strict'
 
-const userForm = new userForm();
+const userForm = new UserForm();
 
-userForm.loginFormCallback = (data) => {
+UserForm.loginFormCallback = (data) => {
     ApiConnector.login(
         data,
         (response) => {
             if (response.success) {
                 location.reload()
             } else {
-                this.setLoginErrorMessage(response.error);
+                UserForm.setLoginErrorMessage(response.error);
             }
         }
     )
 }
-userForm.registerFormCallback = (data) => {
+UserForm.registerFormCallback = (data) => {
     ApiConnector.register(
         data,
         (response) => {
             if (response.success) {
                 location.reload()
             } else {
-                this.setRegisterErrorMessage(response.error);
+                UserForm.setRegisterErrorMessage(response.error);
             }
         }
     )
